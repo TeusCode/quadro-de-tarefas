@@ -10,57 +10,79 @@
 :root {
   --title-color: #747b8c;
   --title-02: #182b4d;
-  --task:#4d5c7e;
-  --bg-column-task:#f4f5f7;
-  --bg-task:white;
+  --task: #4d5c7e;
+  --bg-column-task: #f4f5f7;
+  --bg-task: white;
+  --bg-selected: #deebff;
+  --border-selected: #2482ff;
 }
 
 main {
-    padding: 25px;
-    user-select: none; /* Impede que selecionemos os elementos HTML */
+  padding: 25px;
+  user-select: none; /* Impede que selecionemos os elementos HTML */
 }
 
-header>span{
-    color: var(--title-color);
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    font-size: 0.8em;
+header > span {
+  color: var(--title-color);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 0.8em;
 }
 
-header>h1{
-    color: var(--title-02);
-    font-weight: 600;
-    margin-bottom: 20px;
-    font-size: 2em;
+header > h1 {
+  color: var(--title-02);
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 2em;
 }
-section.columns{
-    display:inline-block;
-    padding: 10px;
-    background-color: var(--bg-column-task);
-    height: 80vw;
-    border-radius: 10px;
-    max-width: 200px;
-    margin-right: 20px;
-}
-
-section>h2.column_title{
-    font-size: 1em;
-    color:var(--title-color);
-    padding-bottom: 20px;
+.columns {
+  display: flex;
+  height: 100dvh; /* Dinamic view height (tamanho da altura da tela, porém sem barras, que existem principalmente no mobile */
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-top: 20px;
+  gap: 15px;
 }
 
-section.column_cards{
-    /* background-color: green; */
-    color: var(--task);
+.column {
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: var(--bg-column-task);
 }
 
-section.cards{
-    font-size: 0.8em;
-    font-weight: 500;
-    background-color: var(--bg-task);
-    padding: 10px;
-    border-radius: 3px;
-    border:1px #63749c44 solid;
-    box-shadow: 0px 3px 3px rgba(105, 105, 105, 0.13), 0px -1px 0px rgba(105, 105, 105, 0.13);
-    margin-bottom: 10px;
+.column_title {
+  font-size: 1em;
+  color: var(--title-color);
+  padding-bottom: 20px;
+}
+
+.column_cards {
+  /* background-color: green; */
+  min-width: 100px;
+  color: var(--task);
+  height: 100%;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.cards {
+  font-size: 0.8em;
+  font-weight: 500;
+  background-color: var(--bg-task);
+  padding: 12px 14px;
+  width: 100%;
+  min-width: 78px;
+  border-radius: 3px;
+  border: 1px #63749c44 solid;
+  box-shadow:
+    0px 3px 3px rgba(105, 105, 105, 0.13),
+    0px -1px 0px rgba(105, 105, 105, 0.13);
+  margin-bottom: 10px;
+}
+
+.column_highlight{
+    background-color: var(--bg-selected);
+    border: 5px;
+    border: 2px solid var(--border-selected);
 }

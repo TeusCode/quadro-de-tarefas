@@ -1,30 +1,42 @@
 <!doctype html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/css/style.css" />
     <title>QUADRO DE TAREFAS</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <header>
-            <span>Project / Dev Projects</span>
-            <h1>Board</h1>
-        </header>
-<!-- COLUNAS -->
-        <section class="columns">
-            <h2 class="column_title">TO DO</h2>
-                <section class="column_cards">
-                    <section class="cards">Organizar local de trabalho</section>
-                    <section class="cards">Solicitar coleta de resíduos</section>
-                    <section class="cards">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus nisi inventore officiis reiciendis obcaecati! Quasi animi cupiditate saepe. Voluptatem obcaecati qui quidem enim nemo eius id quas et aut non?</section>
-                    <section class="cards">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum pariatur incidunt unde recusandae amet veniam ullam excepturi a. Dignissimos dolorem, fugiat nesciunt quos obcaecati nobis? Sit culpa asperiores velit minus.</section>
-                </section>
-        </section>
-    </main>
-</body>
+      <header>
+        <span>Project / Dev Projects</span>
+        <h1>Board</h1>
+      </header>
+      <!-- COLUNAS -->
+      <section class="columns">
 
+        <section class="column">
+          <h2 class="column_title">TO DO</h2>
+          <section class="column_cards"> <!-- draggable="true" (Permite que possamos arrastar um elemento) -->
+            <section class="cards" draggable="true">Organizar local de trabalho</section>
+            <section class="cards" draggable="true">Emitir Nota Fiscal</section>
+            <section class="cards" draggable="true">Abrir RDAs</section>
+          </section>
+        </section>
+
+
+        <section class="column ">
+          <h2 class="column_title">IN PROGRESS</h2>
+          <section class="column_cards">
+            <!-- <section class="cards" draggable="true">Limpeza de discos</section>
+            <section class="cards" draggable="true">Limpeza de discos</section>
+            <section class="cards" draggable="true">Limpeza de discos</section> -->
+            </section>
+          </section>
+        </section>
+      </section>
+    </main>
+    <script src="./src/js/script.js"></script>
+  </body>
 </html>
