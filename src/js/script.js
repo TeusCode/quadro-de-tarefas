@@ -42,6 +42,36 @@ const dragDrop = (event) => {
   }
 };
 
+const createTask = (event)=>{
+    const card = document.createElement('section');
+    const elm = event.target;
+
+    if(elm.classList.contains('cards')) return;
+
+    card.classList.add('cards');
+    card.draggable = 'true';
+    card.contentEditable = 'true'; //Torna o conteúdo do elemento editavel
+
+    elm.appendChild(card);
+    card.focus();
+
+    card.addEventListener('focusout',()=>{
+        if(!card.textContent){
+            card.remove();
+        }
+        card.contentEditable = 'false';
+    });
+
+    card.addEventListener('keydown',(event)=>{
+        if(event.key === 'Enter'){
+            card.contentEditable = 'false';
+        }
+    });
+
+    card.addEventListener('dragstart',dragStart);
+}
+
+
 //VOU DEIXAR A BURRICE AQUI PRA NÃO ESQUECER...
 
 // function createTask(column) {
@@ -64,6 +94,6 @@ columns.forEach((column) => {
   column.addEventListener("dragover", dragOver);
   column.addEventListener("dragenter", dragEnter);
   column.addEventListener("dragleave", dragLeave);
-  //   column.addEventListener("dragend", dragEnd);
   column.addEventListener("drop", dragDrop);
+  column.addEventListener("dblclick",createTask);
 });
