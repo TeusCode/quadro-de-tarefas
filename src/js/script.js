@@ -1,5 +1,6 @@
 const columns = document.querySelectorAll(".column_cards");
 const cards = document.querySelectorAll(".cards");
+const cardEdit = document.querySelector(".card_edit")
 
 /* Card arrastado */
 let draggedCard;
@@ -46,7 +47,7 @@ const createTask = (event)=>{
     const card = document.createElement('section');
     const elm = event.target;
 
-    if(elm.classList.contains('cards')) return;
+    if(!elm.classList.contains('column_cards')) return;
 
     card.classList.add('cards');
     card.draggable = 'true';
@@ -69,21 +70,7 @@ const createTask = (event)=>{
     });
 
     card.addEventListener('dragstart',dragStart);
-}
-
-
-//VOU DEIXAR A BURRICE AQUI PRA NÃO ESQUECER...
-
-// function createTask(column) {
-//   const task = document.createElement("section");
-//   task.classList.add("cards");
-//   task.innerText = draggedCard.textContent;
-//   task.draggable = "true";
-//   column.appendChild(task);
-//   draggedCard.remove();
-//   draggedCard = task;
-//   console.log();
-// }
+};
 
 /* Adiciona em todos os cards, a escuta o inicio do arrasto */
 cards.forEach((card) => {
@@ -97,3 +84,4 @@ columns.forEach((column) => {
   column.addEventListener("drop", dragDrop);
   column.addEventListener("dblclick",createTask);
 });
+
