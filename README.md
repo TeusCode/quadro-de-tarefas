@@ -3,6 +3,8 @@ Quadro de tarefas utilizando JavaScript, Html e Css
 
 Quadro de tarefas utilizado por muitas empresas, e por diversas métodologias de projeto.
 
+Projeto desenvolvido para aprimoramento de habilidade de html, css e javaScript.
+
 <img src="./src/img/projeto.png" width="70%">
 
 Projeto do Manual do Dev,
